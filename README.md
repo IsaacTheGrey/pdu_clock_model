@@ -38,6 +38,19 @@ To run the simulation and sensitivity analysis, execute the following command:
 python scripts/run_simulation.py
 ```
 
+## Model
+X = CLK/BMAL (e-box activity)
+Y = PER/tr-CRY mRNA
+Z = PER/tr-CRY proteins (inhibitor complex)
+S = REV-ERB protein
+W = CWO protein
+b = basal CLK/BMAL activation
+dW = positive effect of CWO
+\frac{dX}{dt} = \nu_1 (\frac{K_1^{hill}}{K_1^{hill} + Z^{hill} + S^{hill} + W^{hill}}) (b + cX +dW) - \nu_2(\frac{X}{K_2+X})
+
+
+
+
 ```mermaid
 graph TD;
     A[Start] --> B[Generate Default Parameters]
