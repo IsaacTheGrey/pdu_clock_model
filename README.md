@@ -56,15 +56,20 @@ dW = positive effect of CWO
 $$
 \frac{dX}{dt} = \nu_1 (\frac{K_1^{hill}}{K_1^{hill} + Z^{hill} + S^{hill} + W^{hill}}) (b + cX +dW) - \nu_2(\frac{X}{K_2+X})
 $$
+
+
 $$
 \frac{dY}{dt} = \nu_3X (\frac{K_3^{hill}}{K_3^{hill} + W^{hill}}) - \nu_4\frac{Y}{K_4+Y}
 $$
+
 $$
 \frac{dZ}{dt} = \nu_5Y - \nu_6\frac{Z}{K_6+Z}
 $$
+
 $$
 \frac{dR}{dt} = \nu_7X - \nu_8\frac{R}{K_7+R}
 $$
+
 $$
 \frac{dS}{dt} = \nu_9R - \nu_10 \frac{S}{K_8+S}
 $$
