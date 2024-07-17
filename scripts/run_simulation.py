@@ -1,7 +1,7 @@
 import numpy as np
 from circadian_clock.model import generate_default_parameters
 from circadian_clock.simulation import integrate_model
-from circadian_clock.analysis import normalize_oscillations, compute_periodogram, parameter_sweep
+from circadian_clock.analysis import normalize_oscillations, compute_periodogram, parameter_sweep, save_sensitivity_results
 from circadian_clock.plotting import plot_main_results, plot_sensitivity_results
 
 def main():
@@ -37,9 +37,11 @@ def main():
     # Perform parameter sweep
     sensitivity_results = parameter_sweep(base_parameters, y0, t, parameter_ranges)
 
+    # Save sensitivity results to CSV
+    save_sensitivity_results(sensitivity_results, 'sensitivity_results.csv')
+
     # Plot sensitivity results in multiple pages
     plot_sensitivity_results(sensitivity_results)
 
 if __name__ == "__main__":
     main()
-
