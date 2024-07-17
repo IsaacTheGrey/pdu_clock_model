@@ -37,3 +37,32 @@ To run the simulation and sensitivity analysis, execute the following command:
 ```bash
 python scripts/run_simulation.py
 
+
+```mermaid
+graph TD;
+    A[Start] --> B[Generate Default Parameters]
+    B --> C[Integrate Model]
+    C --> D[Remove Transient Behavior]
+    D --> E[Compute Periodogram]
+    E --> F[Plot Main Results]
+    F --> G[Define Parameter Ranges]
+    G --> H[Perform Parameter Sweep]
+    H --> I[Save Sensitivity Results to CSV]
+    I --> J[Plot Sensitivity Results]
+    J --> K[End]
+
+    subgraph Simulation
+        B --> C
+        C --> D
+        D --> E
+        E --> F
+    end
+
+    subgraph Sensitivity Analysis
+        G --> H
+        H --> I
+        I --> J
+    end
+```
+
+
