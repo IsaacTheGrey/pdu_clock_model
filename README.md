@@ -46,8 +46,10 @@ S = REV-ERB protein
 W = CWO protein
 b = basal CLK/BMAL activation
 dW = positive effect of CWO
-\frac{dX}{dt} = \nu_1 (\frac{K_1^{hill}}{K_1^{hill} + Z^{hill} + S^{hill} + W^{hill}}) (b + cX +dW) - \nu_2(\frac{X}{K_2+X})
 
+$$
+\frac{dX}{dt} = \nu_1 (\frac{K_1^{hill}}{K_1^{hill} + Z^{hill} + S^{hill} + W^{hill}}) (b + cX +dW) - \nu_2(\frac{X}{K_2+X})
+$$
 
 
 
