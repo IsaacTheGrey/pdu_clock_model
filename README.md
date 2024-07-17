@@ -36,7 +36,7 @@ To run the simulation and sensitivity analysis, execute the following command:
 
 ```bash
 python scripts/run_simulation.py
-
+```
 
 ```mermaid
 graph TD;
