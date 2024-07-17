@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.signal import periodogram
 from multiprocessing import Pool
+import csv
 
 def normalize_oscillations(solution):
     return solution / solution.mean(axis=0)
@@ -49,3 +50,18 @@ def parameter_sweep(base_parameters, y0, t, parameter_ranges):
         sensitivity_results[param] = (param_range, dominant_periods)
     return sensitivity_results
 
+def save_sensitivity_results(sensitivity_results, filename):
+    """
+    Saves sensitivity analysis results to a CSV file.
+    
+    :param sensitivity_results: Dictionary of results for each parameter.
+    :param filename: Name of the file to save the results.
+    """
+    with open(filename, 'w', newline='') as csvfile:
+        fieldnames = ['Parameter', 'Value', 'Dominant Period']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        writer.writeheader()
+        for param, (param_range, dom_periods) in sensitivity_results.items():
+            for value, period in zip(param_range, dom_periods):
+                writer.writerow({'Parameter': param, 'Value': value, 'Dominant Period': period})
